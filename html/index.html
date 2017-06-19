@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+  </head>
+  <body>
+    <div class="">
+      <a style="display:block;font-size:20px;margin-bottom:20px;" href="#" onclick="openhome()">home</a>
+
+        <a style="display:block;font-size:20px;margin-bottom:20px;" href="#" onclick="opentaobao()">淘宝 </a>
+
+          <a style="display:block;font-size:20px;margin-bottom:20px;" href="#" onclick="jump_directly_android()">jump directly android </a>
+          <a style="display:block;font-size:20px;margin-bottom:20px;" href="#" onclick="jump_directly_ios()" >jump directly ios</a>
+<a style="display:block;font-size:20px;margin-bottom:20px;" href="#" onclick="jump_intent_android()" >jump intent_android</a>
+          
+
+    </div>
+    <script type="text/javascript" src="wakeup.js"></script>
+    <script type="text/javascript">
+
+    function openhome(){
+      //console.log(openApp);
+      //console.log(111);
+      var config={
+        iphoneSchema: 'schemesample-ios://',
+        iphoneDownUrl: 'itms-apps://itunes.apple.com/cn/app/id333206289?mt=8',
+        androidSchema: 'schemesample-android://',
+        androidDownUrl: 'http://webrs.xingbo.tv/app/XingboLive-release.apk',
+        param:""
+      }
+      wakeup(config);
+    }
+    function opentaobao(){
+      var config={
+        iphoneSchema: 'tbopen://',
+        iphoneDownUrl: 'https://itunes.apple.com/cn/app/id333206289?mt=8',
+        androidSchema: 'taobao://',
+        androidDownUrl: 'http://webrs.xingbo.tv/app/XingboLive-release.apk',
+        param:""
+      }
+      wakeup(config);
+    }
+    function jump_directly_android(){
+        window.location.href="schemesample-android://";
+        window.setTimeout(function(){
+                 window.location.href = "http://webrs.xingbo.tv/app/XingboLive-release.apk";
+                 },3000);
+    }
+     function jump_directly_ios(){
+          
+         window.location.href="schemesample-ios://";
+         window.setTimeout(function(){
+               window.location.href = "itms-apps://itunes.apple.com/cn/app/id333206289";
+               },1000);
+    }
+
+function jump_intent_android(){
+    window.location.href="intent://schemesample-android/#Intent;scheme=schemesample-android;package=com.cmcc.cmrcs.android.schemesampleandroid;S.browser_fallback_url=http://webrs.xingbo.tv/app/XingboLive-release.apk;end";
+}
+    </script>
+  </body>
+</html>
